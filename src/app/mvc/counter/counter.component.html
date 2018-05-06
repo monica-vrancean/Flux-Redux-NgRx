@@ -1,0 +1,13 @@
+<div class="simple-counter">
+  Simple Counter
+  <div [class.isEven]="isEven()"> {{counter.value}}</div>
+  <button (click)="increaseCounter()">Increase</button>
+  <input [(ngModel)]="counter.value">
+</div>
+
+
+<div class="rx-js-counter">
+  Rx-Js Counter
+  <div [class.isEven]="isEvenObs() | async">{{rxJsCounterValue | async}}</div>
+  <button (click)="increaseRxJsCounter()">Increase Obs</button>
+</div>

@@ -1,0 +1,36 @@
+div{
+  padding:30px;
+  border: 1px solid black;
+  width:400px;
+  text-align: center;
+}
+.redux{
+    display:block;
+
+}
+app-counter{
+  display:block;
+}
+app-counter-rxjs{
+  display:block;
+}
+
+app-counter-mvc{
+  display:block;
+}
+
+.redux-rxJs{
+  display:block;
+}
+
+.mvc{
+  display:block;
+}
+
+.ng-rx{
+  display: block;
+}
+
+.flux{
+  display:block;
+}
