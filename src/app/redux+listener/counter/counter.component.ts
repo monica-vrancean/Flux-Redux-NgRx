@@ -18,13 +18,12 @@ export class CounterListenerComponent {
 
   constructor(private counterService: CounterListenerService) {
     this.store = this.counterService.store;
+    this.counterValue = this.store.getState().counter.value;
 
     this.store.subscribe((state) => {
       this.counterValue = state.counter.value;
       this.isEven();
     });
-
-    this.store.dispatch({type: 'GET'});
   }
 
   increaseCounter() {
@@ -33,6 +32,10 @@ export class CounterListenerComponent {
 
   decreaseCounter() {
     this.store.dispatch({type: 'DECREMENT'});
+  }
+
+  changeCounter(newCounter: number){
+    this.store.dispatch({type:'CHANGE_COUNTER', payload: newCounter});
   }
 
   isEven() {

@@ -6,7 +6,7 @@ import { State } from '../store/state';
 import { Store } from '../store/store';
 
 @Component({
-  selector: 'app-counter',
+  selector: 'app-redux-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.css'],
 })

@@ -2,4 +2,6 @@ Counter Value
 <div [class.isEven]="isEven()">{{counterValue}}</div>
 <button (click)="increaseCounter()">Increase</button>
 <button (click)="decreaseCounter()">Decrement</button>
+<!-- # - template reference var -->
+<input #box [ngModel]="counterValue" (keyup)="changeCounter(box.value)">
 

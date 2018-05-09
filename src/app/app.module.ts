@@ -15,11 +15,15 @@ import { CounterMvcComponent } from './mvc/counter/counter.component';
 import { reducers } from './ng-rx/store/combined.reducers';
 import { appInitialState } from './ng-rx/store/initial-states';
 import { NgRxCounterComponent } from './ng-rx/counter/ng-rx-counter.component';
-import { CounterDispatcherService } from './ng-rx/store/counter-dispatcher.service';
+import { CounterDispatcherService } from './ng-rx/store/counter/counter-dispatcher.service';
 import { FluxCounterComponent } from './flux/counter/counter.component';
 import { FluxDispatcher } from './flux/store/dispatcher';
 import { FluxStore } from './flux/store/store';
 import { FormsModule } from '@angular/forms';
+import { CounterMvcRxComponent } from './mvc-rx/counter/counter.component';
+import { CounterMvcListenerComponent } from './mvc-listener/counter/counter.component';
+import { EffectsModule } from '@ngrx/effects';
+import { UpdateCounterEffects } from './ng-rx/store/counter/update-counter.effects';
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { FormsModule } from '@angular/forms';
     CounterRxJsComponent,
     CounterMvcComponent,
     NgRxCounterComponent,
-    FluxCounterComponent
+    FluxCounterComponent,
+    CounterMvcRxComponent,
+    CounterMvcListenerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +45,7 @@ import { FormsModule } from '@angular/forms';
       initialState: {counterState:{value: 0}}
     }),
     StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([UpdateCounterEffects])
   ],
   providers:[
   CounterService,

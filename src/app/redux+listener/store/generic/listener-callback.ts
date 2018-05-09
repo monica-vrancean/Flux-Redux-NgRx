@@ -1,1 +1,0 @@
-type ListenerCallback = (State) => void;

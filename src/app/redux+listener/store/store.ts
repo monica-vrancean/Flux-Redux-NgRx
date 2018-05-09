@@ -1,9 +1,9 @@
-import {Action} from './generic/action';
 import {State} from './state';
+import { Action } from '../../generic/action';
 
 export class Store<State>  {
   private _state: State;
-  private _listeners: ListenerCallback[] = [];
+  private _listeners: StateListenerCallback[] = [];
 
   constructor(
     private reducer,
@@ -14,15 +14,15 @@ export class Store<State>  {
   }
 
   getState() {
-    this._listeners.forEach((listener: ListenerCallback) => listener(this._state));
+    return this._state;
   }
 
   dispatch(action: Action): void {
     this._state = this.reducer(this._state, action);
-    this._listeners.forEach((listener: ListenerCallback) => listener(this._state));
+    this._listeners.forEach((listener: StateListenerCallback) => listener(this._state));
   }
 
-  subscribe(listener: ListenerCallback) {
+  subscribe(listener: StateListenerCallback) {
     this._listeners.push(listener);
   }
 }

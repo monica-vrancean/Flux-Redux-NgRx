@@ -1,13 +1,13 @@
-import {Action} from './generic/action';
 import {State} from './state';
 import { FluxDispatcher } from './dispatcher';
 import { Counter } from '../../models/counter';
 import { Injectable } from '@angular/core';
+import { Action } from '../../generic/action';
 
 @Injectable()
 export class FluxStore {
   private state: State;
-  private _listeners: ListenerCallback[] = [];
+  private _listeners: StateListenerCallback[] = [];
 
   constructor(
     private dispatcher: FluxDispatcher
@@ -17,6 +17,10 @@ export class FluxStore {
         this.state = this.reduce(action);
         this.emit(this.state);
       });
+  }
+
+  getState(){
+    return this.state;
   }
 
  reduce(action: Action): State{
@@ -30,12 +34,12 @@ export class FluxStore {
     }
  }
 
-subscribe(listener: ListenerCallback) {
+subscribe(listener: StateListenerCallback) {
   this._listeners.push(listener);
 }
 
 private emit(state: State): void {
-  this._listeners.forEach((listener: ListenerCallback) => listener(state));
+  this._listeners.forEach((listener: StateListenerCallback) => listener(state));
 }
 
  private initializeState(){

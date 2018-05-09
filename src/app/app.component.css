@@ -4,33 +4,11 @@ div{
   width:400px;
   text-align: center;
 }
-.redux{
+.redux, .mvc, .redux-listener, .redux-rxJs, .ng-rx, .flux{
     display:block;
 
 }
-app-counter{
-  display:block;
-}
-app-counter-rxjs{
-  display:block;
-}
-
-app-counter-mvc{
-  display:block;
-}
-
-.redux-rxJs{
-  display:block;
-}
-
-.mvc{
-  display:block;
-}
-
-.ng-rx{
-  display: block;
-}
-
-.flux{
+app-mvc-counter, app-mvc-rx-counter, app-redux-counter, app-counter-listener, 
+app-counter-rxjs, app-flux-counter, app-ng-rx-counter{
   display:block;
 }

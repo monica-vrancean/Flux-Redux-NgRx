@@ -2,16 +2,6 @@ button, input, .simple-class{
   display:block;
 }
 
-.simple-counter{
-  border: 1px solid black;
-  padding: 15px;
-}
-
 .isEven{
   color:red;
-}
-
-.rx-js-counter{
-  border: 1px solid black;
-  padding:15px;
 }

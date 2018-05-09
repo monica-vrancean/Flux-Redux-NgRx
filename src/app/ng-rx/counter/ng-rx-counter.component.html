@@ -1,5 +1,6 @@
-Counter Value
-<div [class.isEven]="isEven() | async">{{counterValue$ | async}}</div>
-<button (click)="increaseCounter()">Increase</button>
-<button (click)="decreaseCounter()">Decrement</button>
-
+<div [style.color]="contentColor$ | async">
+    Counter Value
+    <div [class.isEven]="isEven() | async">{{counterValue$ | async}}</div>
+    <button (click)="increaseCounter()">Increase</button>
+    <button (click)="decreaseCounter()">Decrement</button>
+</div>

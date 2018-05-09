@@ -1,4 +1,4 @@
-import {Action} from './generic/action';
+import {Action} from '../../generic/action';
 import {State} from './state';
 
 export class Store {

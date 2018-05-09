@@ -14,10 +14,10 @@ export class FluxCounterComponent {
   counterValue : number;
 
   constructor(private dispatcher: FluxDispatcher, private store: FluxStore) {
+    this.counterValue = this.store.getState().counter.value;
     this.store.subscribe((state)=>{
       this.counterValue = state.counter.value;
     });
-    this.dispatcher.dispatch({type: 'GET'});
   }
 
   increaseCounter() {

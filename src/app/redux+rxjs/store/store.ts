@@ -1,4 +1,4 @@
-import {Action} from './generic/action';
+import {Action} from '../../generic/action';
 import {State} from './state';
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
